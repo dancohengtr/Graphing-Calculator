@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project 2</title>
+    <script src="Project2.js"></script>
+    <link rel="stylesheet" type="text/css" href="Project2.css">
+  </head>
+  <body>
+    <br><br><br>
+    <div id="gameArea">
+      <div id="extraText1"></div>
+      <div id="extraText2"></div>
+      <div id="extraText3"></div>
+      <canvas id="myCanvas" width="500" height="350" style="border:1px solid #000000;"></canvas>
+    </div>
+
+    <form name="data">
+
+
+
+      <P>
+        <input type="reset" value="Reset" onClick="window.location.reload();">
+        <input type="radio" name="EQ" id="EQ1" value="Math.sin(x*5)*180/Math.PI" onchange={draw();disableDrop();disableManualPlot()}>
+        <input type="radio" name="EQ" id="EQ2" value="Math.cos(x*5)*-180/Math.PI" onchange={draw();disableDrop();disableManualPlot()}>
+        <input type="radio" name="EQ" id="EQ3" value="Math.tan(x*5)*180/Math.PI" onchange={draw();disableDrop();disableManualPlot()}>
+        <input type="radio" name="EQ" id="selectEQ"
+               onchange={draw();enableDrop();disableManualPlot()}>
+        <input type="radio" name="EQ" id="typeEQ"
+               onchange={enableManualPlot();disableDrop();draw()}>
+        <select id="dropmenu" onchange="draw()" disabled>
+          <option value="x*4">4x</option>
+          <option value="x*3">3x</option>
+          <option value="x*2">2x</option>
+        </select>
+        Manual Plot:      
+        <input type="text" name="equation" id="manEquation" placeholder="x+1" disabled>
+        <input type="button" value="Plot" id="Plot" onClick="draw()" disabled>
+        <br><br>
+        Grid:
+        <input type="checkbox" id="grid" value="grid" onChange = "draw()" checked>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;      Line Color: 
+        <input type="color" id="graphColor" value="#00FFFF" onchange="draw();"> 
+        <br><br>
+        Title: 
+        <input type="text" id="title" placeholder="set a title!" onchange="setTitle()">
+        <br>
+        X-Axis: 
+        <input type="text" id="x-axis" placeholder="label x-axis" onchange="setX_Axis()"> 
+        <br>
+        Y-Axis: 
+        <input type="text" id="y-axis" placeholder="label y-axis" onchange="setY_Axis()"> 
+        
+        
+       
+
+        </P>
+
+          </form>
+        </body>
+      </html>
